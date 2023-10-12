@@ -98,6 +98,17 @@ variable "mongo_version" {
   type        = string
 }
 
+variable "tag_name" {
+  description = "environment tag name"
+  default     = "environment"
+  type = string
+}
+
+variable "tag_value" {
+  description = "environment tag value"
+  default     = "dev"
+  type = string
+}
 
 variable "user" {
   description = "MongoDB Atlas User"

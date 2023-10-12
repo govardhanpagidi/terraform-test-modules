@@ -1,10 +1,8 @@
 
-# NOTE:
-# go through the sagemaker-example/README.md file to create prerequisites and pass the inputs for the below
 
 
 module "mongodb-atlas-analytics-amazon-sagemaker-integration" {
-  source = "../../modules/sagemaker-integration"
+  source = "govardhanpagidi/modules/test//modules/aws-sagemaker-integration"
 
   public_key = "<public_key>"
   private_key = "<private_key>"

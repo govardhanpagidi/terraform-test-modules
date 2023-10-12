@@ -1,13 +1,19 @@
+
+provider "aws" {
+    region     = "us-east-1"
+    profile = "dev"
+}
+
 module "atlas-basic"  {
-  source = "../../modules/atlas-basic"
+  source  = "../../modules/atlas-basic"
 
-  public_key = "<publicKey>"
-  private_key = "<privateKey>"
-  atlas_org_id = "<orgId>"
+  public_key = "<public_key>"
+  private_key = "<private_key>"
+  atlas_org_id = "<atlas_org_id>"
 
-  database_name = ["test1","test2"]
+  project_name = "test-modules-project-1"
   db_users = ["user1","user2"]
-  db_passwords = ["<password>","<password>"]
+  db_passwords = ["Passw0rd1","Passw0rd1"]
   database_names = ["test-db1","test-db2"]
   region = "US_EAST_1"
 

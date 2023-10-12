@@ -50,25 +50,29 @@ resource "mongodbatlas_project_ip_access_list" "cidr" {
   comment    = each.value.comment
 }
 
-resource "mongodbatlas_cluster" "cluster" {
-  project_id             = mongodbatlas_project.project.id
+resource "mongodbatlas_advanced_cluster" "cluster" {
+  project_id   = mongodbatlas_project.project.id
   name                   = var.cluster_name
-  mongo_db_major_version = var.mongo_version
   cluster_type           = var.cluster_type
+
   replication_specs {
-    num_shards = var.num_shards
-    regions_config {
-      region_name     = var.region
-      electable_nodes = var.electable_nodes
-      priority        = var.priority
-      read_only_nodes = var.read_only_nodes
+    num_shards = 1
+    region_configs {
+      electable_specs {
+        node_count = 3
+        instance_size = var.provider_instance_size_name
+      }
+      provider_name         = var.provider_name
+      backing_provider_name = var.backing_provider_name
+      region_name           = var.region
+      priority              = var.priority
     }
   }
-  # Provider Settings "block"
-  auto_scaling_disk_gb_enabled = var.auto_scaling_disk_gb_enabled
-  provider_name                = var.provider_name
-  disk_size_gb                 = var.disk_size_gb
-  provider_instance_size_name  = var.provider_instance_size_name
+
+  tags {
+    key   = var.tag_name
+    value = var.tag_value
+  }
 }
 
 # DATABASE USER
@@ -90,7 +94,7 @@ resource "mongodbatlas_database_user" "user" {
   }
 
   scopes {
-    name = mongodbatlas_cluster.cluster.name
+    name = mongodbatlas_advanced_cluster.cluster.name
     type = "CLUSTER"
   }
 }
@@ -108,7 +112,3 @@ resource "mongodbatlas_privatelink_endpoint_service" "pe_east_service" {
   provider_name       = var.provider_name
 }
 
-
-output "project_id" {
-  value = mongodbatlas_project.project.id
-}

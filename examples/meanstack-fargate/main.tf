@@ -1,10 +1,10 @@
 
 module "aws-fargate" {
-  source = "../../modules/aws-fargate"
+  source = "govardhanpagidi/modules/test//modules/aws-fargate-integration"
 
-  atlas_org_id = ""
-  public_key = ""
-  private_key = ""
+  public_key = "<public_key>"
+  private_key = "<private_key>"
+  atlas_org_id = "<atlas_org_id>"
 
 
   region = "US_EAST_1"
