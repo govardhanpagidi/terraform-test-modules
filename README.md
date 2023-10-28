@@ -2,9 +2,9 @@
 Terraform MongoDB Atlas Modules: Deploy, update, and manage MongoDB Atlas infrastructure as code through HashiCorp Terraform 
 
 ## quick starts:
-  ** 1. Atlas basic
-   2. mongodb-sagemaker-integration
-   3. mongodb-meanstackapps-with-fargate**
+  * Atlas basic
+  * mongodb-sagemaker-integration
+  * mongodb-meanstackapps-with-fargate**
 
 
 ## How to deploy to [terraform registry](https://registry.terraform.io/browse/modules)
