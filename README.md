@@ -4,15 +4,19 @@ Terraform MongoDB Atlas Modules: Deploy, update, and manage MongoDB Atlas infras
 ## quick starts:
   * Atlas basic
   * mongodb-sagemaker-integration
-  * mongodb-meanstackapps-with-fargate**
+  * mongodb-meanstackapps-with-fargate
 
 
 ## How to deploy to [terraform registry](https://registry.terraform.io/browse/modules)
 
-If you want to publish create/clone to your own repo and publish to [terraform registry](https://registry.terraform.io/browse/modules).
 
+Only for the very first time publish the modules to [terraform registry](https://registry.terraform.io/browse/modules) by logging in [terraform registry](https://registry.terraform.io/) using github account.
+  * login with github account
+  * use publish > module option
+  * select the repository
+  * publish
 
-### STEP 1: 
+## How to update the modules in terraform registry
 
 #### Bump the version add the git tag and push it to the repo
 ```
@@ -24,8 +28,6 @@ example:
   git tag v0.0.2 baaeafb
   git push origin v0.0.2
 ```
-
-### STEP 2: 
 
 This repo is already published into registry with [terraform-test-modules](https://registry.terraform.io/modules/govardhanpagidi/modules/test/latest)
 The changes will automatically reflect once you push the changes to master/main branch.
