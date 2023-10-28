@@ -18,6 +18,8 @@ Only for the very first time publish the modules to [terraform registry](https:/
 
 ## How to update the modules in terraform registry
 
+Make sure all changes are updated to main branch.
+
 #### Bump the version add the git tag and push it to the repo
 ```
   git tag <version> <7 digit githash>
