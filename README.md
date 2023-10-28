@@ -9,7 +9,10 @@ these modules are for quick starts for
 
 
 ## To bump the version add the git tag and push it to the repo
-
+```
+  git tag <version> <7 digit githash>
+  git push origin <version>
+```
 example:
 ```
   git tag v0.0.2 baaeafb
