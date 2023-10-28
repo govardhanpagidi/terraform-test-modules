@@ -10,7 +10,7 @@ Terraform MongoDB Atlas Modules: Deploy, update, and manage MongoDB Atlas infras
 ## How to deploy to [terraform registry](https://registry.terraform.io/browse/modules)
 
 
-Only for the very first time publish the modules to [terraform registry](https://registry.terraform.io/browse/modules) by logging in [terraform registry](https://registry.terraform.io/) using github account.
+Only for the very first time, we sholud publish the modules to [terraform registry](https://registry.terraform.io/browse/modules) by logging in [terraform registry](https://registry.terraform.io/) using github account.
   * login with github account
   * use publish > module option
   * select the repository
